@@ -44,7 +44,7 @@
     }
   },
   "release": {
-    "projects": ["build-tools"],
+    "projects": ["build-tools", "!dist/**"],
     "projectsRelationship": "independent",
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
