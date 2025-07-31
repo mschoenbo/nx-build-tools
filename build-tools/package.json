@@ -1,5 +1,5 @@
 {
-  "name": "build-tools",
+  "name": "@mschoenbo/nx-build-tools",
   "version": "0.0.1",
   "type": "commonjs",
   "main": "./src/index.js",
