@@ -44,14 +44,17 @@
     }
   },
   "release": {
-    "projects": ["build-tools", "!dist/**"],
     "projectsRelationship": "independent",
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
     },
     "changelog": {
       "projectChangelogs": {
-        "createRelease": "github"
+        "createRelease": "github",
+        "file": false,
+        "renderOptions": {
+          "authors": false
+        }
       }
     }
   }

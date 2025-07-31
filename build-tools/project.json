@@ -5,7 +5,6 @@
   "projectType": "library",
   "release": {
     "version": {
-      "manifestRootsToUpdate": ["dist/{projectRoot}"],
       "currentVersionResolver": "git-tag",
       "fallbackCurrentVersionResolver": "disk"
     }
@@ -22,6 +21,11 @@
         "assets": [
           "build-tools/*.md",
           "build-tools/LICENSE",
+          {
+            "input": "./build-tools",
+            "glob": "package.json",
+            "output": "."
+          },
           {
             "input": "./build-tools/src",
             "glob": "**/!(*.ts)",

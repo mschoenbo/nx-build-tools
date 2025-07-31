@@ -12,5 +12,9 @@
   "executors": "./executors.json",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mschoenbo/nx-build-tools.git"
   }
 }
