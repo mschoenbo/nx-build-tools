@@ -30,6 +30,10 @@ jobs:
         run: npm install
         shell: bash
 
+      - name: Build
+        run: npx nx build build-tools
+        shell: bash
+
       - name: Print Environment Info
         run: npx nx report
         shell: bash
