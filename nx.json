@@ -45,11 +45,12 @@
   },
   "release": {
     "projects": ["build-tools"],
+    "projectsRelationship": "independent",
     "version": {
       "preVersionCommand": "npx nx run-many -t build"
     },
     "changelog": {
-      "workspaceChangelog": {
+      "projectChangelogs": {
         "createRelease": "github"
       }
     }
