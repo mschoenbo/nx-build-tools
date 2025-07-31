@@ -21,6 +21,7 @@
         "tsConfig": "build-tools/tsconfig.lib.json",
         "assets": [
           "build-tools/*.md",
+          "build-tools/LICENSE",
           {
             "input": "./build-tools/src",
             "glob": "**/!(*.ts)",
