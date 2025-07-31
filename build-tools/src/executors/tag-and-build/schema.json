@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Build, Tag and Push Docker Images",
+  "description": "Build a docker image and tags it based in project version or Git tags, and push it to a registry",
+  "type": "object",
+  "properties": {
+    "appName": {
+      "type": "string",
+      "description": "The name of the current NX app to build and tag",
+      "x-completion-type": "projects",
+      "x-completion-project-type": ["application"]
+    },
+    "dockerRepository": {
+      "type": "string",
+      "description": "The base docker repository (e.g. ghcr.io/your-org/)"
+    },
+    "buildTarget": {
+      "type": "string",
+      "description": "The NX build target to run before containerization (e.g. build, test, lint, etc.)",
+      "default": "build"
+    },
+    "dockerfile": {
+      "type": "string",
+      "description": "Path to the Dockerfile relative to the project root.",
+      "default": "Dockerfile"
+    },
+    "context": {
+      "type": "string",
+      "description": "Build context for Docker relative to the project root. Defaults to project root.",
+      "default": "."
+    },
+    "push": {
+      "type": "boolean",
+      "description": "Whether to push the Docker image(s) to the registry.",
+      "default": false
+    },
+    "additionalTags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Additional static tags to apply (e.g., ['latest']).",
+      "default": []
+    },
+    "generateMajorMinor": {
+      "type": "boolean",
+      "description": "Whether to generate major and minor tags based on the project version.",
+      "default": false
+    },
+    "tagPrefix": {
+      "type": "string",
+      "description": "Optional prefix for Git tags if reading from Git (e.g., 'v' for 'app-name/v1.2.3').",
+      "default": "v"
+    }
+  },
+  "required": ["appName", "dockerRepository", "buildTarget"]
+}

@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "tag-and-build": {
+      "implementation": "./src/executors/tag-and-build/tag-and-build",
+      "schema": "./src/executors/tag-and-build/schema.json",
+      "description": "Build, Tag and Push Docker Images based on the package.json version"
+    }
+  }
+}
